@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type="text/css">
+        div, p, a {
+            padding: 15px 30px;
+            display: block;
+            border: 2px solid #000;
+            background: #fff;
+        }
+    </style>
+    <title>Aula 1 - Manipulador inline - Bubbling</title>
+</head>
+<body>
+    <div>
+        <p>
+            <a href="#">A</a>
+        </p>
+    </div>
+
+    <script>
+         let elements = document.querySelectorAll("div, p, a");
+
+         function showTagName() {
+            alert("Captura: "+ this.tagNmae);
+         }
+
+         for(let elem of elements)
+         {
+            elem.addEventListener("click", () => {"click", showTagName, true});
+         }
+
+    </script>
+
+</body>
+</html>
